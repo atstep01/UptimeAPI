@@ -77,7 +77,7 @@ let unifiedServer = function(req, res){
 			'queryStringObject': queryStringObject,
 			'method': method,
 			'headers': headers,
-			'payload': helpers.parseJsonToObject(buffer)
+			'payload': helpers.parseJsonObject(buffer)
 		};
 
 		//Route the request to the specified router
@@ -105,5 +105,6 @@ let unifiedServer = function(req, res){
 //Define a request router
 let router = {
 	'ping' : handlers.ping,
-	'users' : handlers.users
+	'users' : handlers.users,
+	'tokens' : handlers.tokens,
 };
